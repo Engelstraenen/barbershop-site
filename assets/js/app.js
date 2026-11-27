@@ -26,11 +26,12 @@
     const stage = $('.stage', walk), cv = $('canvas.cv', walk), ctx = cv.getContext('2d'), stills = $$('.still', walk).filter(s => $('img', s));
     const sets = $$('[data-at]', walk); let mob = innerWidth < 760;
     const N = +(stage.dataset.n || 0), pat = () => stage.dataset[mob ? 'seqm' : 'seq']; const frames = [];
-    if (N && pat()) for (let i = 0; i < N; i++) { const im = new Image(); im.decoding = 'async'; if (i === 0) im.onload = () => { stage.classList.add('seq'); draw(true); }; im.src = pat().replace('###', String(i).padStart(3, '0')); frames.push(im); }
+    const startSeq = () => { for (let i = 0; i < N; i++) { const im = new Image(); im.decoding = 'async'; if (i === 0) im.onload = () => { stage.classList.add('seq'); draw(true); }; im.src = pat().replace('###', String(i).padStart(3, '0')); frames.push(im); } };
+    if (N && pat()) { if (document.readyState === 'complete') setTimeout(startSeq, 200); else addEventListener('load', () => setTimeout(startSeq, 200)); }
     const size = () => { const r = devicePixelRatio > 1 ? 1.5 : 1; cv.width = Math.round(innerWidth * r); cv.height = Math.round(innerHeight * r); };
     let p = 0, last = -1;
     function draw(force) {
-      if (!frames.length) return; let i = clamp(Math.round(p * (N - 1)), 0, N - 1); while (i > 0 && !frames[i].complete) i--;
+      if (!frames.length) return; let i = clamp(Math.round(clamp(p / .8, 0, 1) * (N - 1)), 0, N - 1); while (i > 0 && !frames[i].complete) i--;
       if (i === last && !force) return; last = i; const f = frames[i]; if (!f.naturalWidth) return;
       const W = cv.width, H = cv.height, s = Math.max(W / f.naturalWidth, H / f.naturalHeight), w = f.naturalWidth * s, h = f.naturalHeight * s;
       ctx.drawImage(f, (W - w) / 2, (H - h) / 2, w, h);
@@ -42,7 +43,13 @@
         // Standbild-Fahrt: Straße → Halle → Stuhl, jedes Bild zoomt auf die Tür / den Gang zu
         const seg = stills.length === 3 ? [[0, .42], [.36, .76], [.7, 1]] : stills.length === 2 ? [[0, .55], [.5, 1]] : [[0, 1]];
         stills.forEach((s, i) => { const [a, b] = seg[i]; const k = clamp((p - a) / (b - a), 0, 1); const fadeIn = i === 0 ? 1 : clamp((p - a) / .06, 0, 1); const fadeOut = i === stills.length - 1 ? 1 : clamp((b - p) / .06, 0, 1); s.style.opacity = Math.min(fadeIn, fadeOut); $('img', s).style.transform = `scale(${1 + k * (i === 2 ? .12 : .55)})`; });
-      } else draw();
+      } else {
+        draw();
+        // Film endet hinten in der Halle → Zoom auf den Barber, Übergang ins Stuhl-Foto (Modell schnitt hart, darum per Code)
+        const k = clamp((p - .76) / .12, 0, 1), last = stills[stills.length - 1];
+        cv.style.transformOrigin = '47% 46%'; cv.style.transform = `scale(${1 + k * 1.8})`; cv.style.filter = k ? `blur(${k * 8}px)` : '';
+        if (last) { last.style.visibility = 'visible'; last.style.opacity = k; $('img', last).style.transform = `scale(${1.18 - k * .18})`; }
+      }
       sets.forEach(el => { const [a, b] = el.dataset.at.split('-').map(Number); el.classList.toggle('off', !(p >= a && p < b)); });
       const cnt = $('.counter', walk); if (cnt) cnt.textContent = String(Math.round(p * 100)).padStart(3, '0') + ' %';
     };

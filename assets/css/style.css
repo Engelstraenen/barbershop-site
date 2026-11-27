@@ -268,3 +268,5 @@ section.blk { padding: clamp(80px, 11vw, 150px) 0; position: relative; }
 
 .btn { white-space: nowrap; }
 @media (max-width: 860px) { .book h2 { font-size: clamp(56px, min(22vw, 34vh), 210px); } }
+
+.stage.seq .still.s2 { z-index: 1; }

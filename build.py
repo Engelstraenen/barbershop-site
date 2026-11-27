@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Barbershop – Seiten bauen. python3 build.py   (Markenname in BRAND)"""
 import json, os
-H = os.path.dirname(os.path.abspath(__file__)); V = '27b'
+H = os.path.dirname(os.path.abspath(__file__)); V = '27c'
 BRAND = 'KANTE'
 has = lambda k: os.path.exists(os.path.join(H, 'assets/img', k + '.webp'))
 SEQ = json.load(open(os.path.join(H, 'assets/seq/seq.json'))) if os.path.exists(os.path.join(H, 'assets/seq/seq.json')) else None
@@ -56,7 +56,7 @@ def index():
     pre = '<link rel="preload" as="image" href="assets/img/street.webp" media="(min-width: 761px)" fetchpriority="high"><link rel="preload" as="image" href="assets/img/street-m.webp" media="(max-width: 760px)" fetchpriority="high">'
     stills = ''.join(f'<div class="still s{i}">{pic(k, a, lazy=i > 0)}</div>' for i, (k, a) in enumerate([('street', 'Barbershop bei Nacht, Glastür, warmes Licht innen'), ('hall', 'Lange Betonhalle mit Lichtraster und schwarzen Stühlen'), ('chair', 'Barber blendet einen Skin Fade')]))
     looks = ''.join(f'<a class="blook rv" href="look-{k}.html" data-sub><figure>{pic(k, n)}</figure><b>{n}</b><small>{s}</small></a>' for k, n, s, *_ in LOOKS)
-    mimgs = ''.join(f'<img src="assets/img/{k}.webp" alt="" loading="lazy" class="{"on" if i == 0 else ""}">' for i, k in enumerate(['chair', 'look1', 'team', 'akademie', 'street']) if has(k))
+    mimgs = ''.join(f'<img src="assets/img/{k}.webp" alt="" loading="lazy" class="{"on" if i == 0 else ""}">' for i, k in enumerate(['hall', 'look1', 'team', 'akademie', 'street']) if has(k))
     bbs = ''.join(f'<button class="bb" data-b="{k}" data-name="{n}">{"<img src=assets/img/" + a + ".webp alt=" + n + " loading=lazy>" if has(a) else ""}{n}<small>{r}</small></button>' for k, n, r, a in TEAM)
     return head(f'{BRAND} – Barbershop', f'{BRAND}: Barbershop für Fade, Bart und Kontur. Stuhl online buchen, Barber wählen, Walk-in-Zeiten.', pre) + header() + f'''
 <main id="top">
