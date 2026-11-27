@@ -40,7 +40,7 @@
     const stage = $('.stage', fs), cv = $('canvas', fs), ctx = cv.getContext('2d'), stills = $$('.still img', fs), steps = $$('.steps3 span', fs);
     let mob = innerWidth < 900; const N = +(stage.dataset.n || 0), frames = []; let p = 0, last = -1;
     const pat = () => stage.dataset[mob && innerHeight > 500 ? 'seqm' : 'seq'];
-    const size = () => { const r = devicePixelRatio > 1 ? 1.5 : 1, b = cv.getBoundingClientRect(); cv.width = Math.round(b.width * r); cv.height = Math.round(b.height * r); };
+    const size = () => { const r = Math.min(devicePixelRatio || 1, 2), b = cv.getBoundingClientRect(); cv.width = Math.round(b.width * r); cv.height = Math.round(b.height * r); ctx.imageSmoothingQuality = 'high'; };
     const draw = force => { if (!frames.length) return; let i = clamp(Math.round(p * (N - 1)), 0, N - 1); while (i > 0 && !frames[i].complete) i--; if (i === last && !force) return; last = i; const f = frames[i]; if (!f.naturalWidth) return; const W = cv.width, H = cv.height, s = Math.max(W / f.naturalWidth, H / f.naturalHeight), w = f.naturalWidth * s, h = f.naturalHeight * s; ctx.drawImage(f, (W - w) / 2, (H - h) * .4, w, h); };
     const start = () => { for (let i = 0; i < N; i++) { const im = new Image(); im.decoding = 'async'; if (i === 0) im.onload = () => { stage.classList.add('seq'); size(); draw(true); }; im.src = pat().replace('###', String(i).padStart(3, '0')); frames.push(im); } };
     if (N && pat()) { if (document.readyState === 'complete') setTimeout(start, 200); else addEventListener('load', () => setTimeout(start, 200)); }

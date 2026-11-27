@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """KANTE – Barbershop „Wisch drüber“ (Aubergine + Mint). python3 build.py"""
 import json, os
-H = os.path.dirname(os.path.abspath(__file__)); V = '28h'
+H = os.path.dirname(os.path.abspath(__file__)); V = '28i'
 BRAND = 'KANTE'
 has = lambda k: os.path.exists(os.path.join(H, 'assets/img', k + '.webp'))
 SEQ = json.load(open(os.path.join(H, 'assets/seq/seq.json'))) if os.path.exists(os.path.join(H, 'assets/seq/seq.json')) else None
