@@ -1,0 +1,91 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KANTE – Barbershop</title><meta name="description" content="KANTE: Barbershop für Fade, Bart und Kontur. Vorher/Nachher wischen, Barber wählen, Stuhl online buchen."><meta name="theme-color" content="#24121f">
+<link rel="preload" href="assets/fonts/syne-latin-3.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" as="image" href="assets/img/vorher.webp" media="(min-width: 901px), (max-height: 500px)" fetchpriority="high"><link rel="preload" as="image" href="assets/img/vorher-m.webp" media="(max-width: 900px) and (min-height: 501px)" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/fonts.css?v=28i"><link rel="stylesheet" href="assets/css/style.css?v=28i">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2324121f'/%3E%3Crect x='10' y='6' width='12' height='20' rx='6' fill='none' stroke='%239fe3c6' stroke-width='3'/%3E%3C/svg%3E">
+</head><body><header class="hd"><a class="logo" href="#top" aria-label="KANTE Startseite"><i></i>KANTE</a>
+<nav class="nav" id="nav"><a href="#top">Wisch drüber</a><a href="#wand">Barber</a><a href="#hoehe">Fade</a><a href="#termin">Termin</a><a href="#liste">Liste</a><a href="#karriere">Karriere</a><a href="#bewertungen">Bewertungen</a><a class="btn" href="#termin">Stuhl buchen</a></nav>
+<button class="burger" aria-label="Menü" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button></header>
+<main id="top">
+<section class="hero">
+ <div><span class="kick">Barbershop · Düsseldorf</span><h1 class="disp">Wisch<br><em>drüber.</em></h1>
+ <p class="lead">Links rein, rechts raus. Zieh die Linie über den Spiegel und sieh, was 45 Minuten bei uns ausmachen.</p>
+ <div class="cta"><a class="btn" href="#termin">Stuhl buchen</a><a class="btn ghost" href="#wand">Barber wählen</a></div></div>
+ <div class="mirror swipe" tabindex="0" role="slider" aria-label="Vorher / Nachher, zum Vergleichen ziehen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-auto>
+ <picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/vorher-m.webp"><img src="assets/img/vorher.webp" alt="Kunde vorher mit langen, herausgewachsenen Locken im Spiegel" fetchpriority=high decoding="async"></picture><picture class="after"><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/nachher-m.webp"><img src="assets/img/nachher.webp" alt="Derselbe Kunde nachher mit frischem Mid Skin Fade" fetchpriority=high decoding="async"></picture><span class="bar"></span><span class="knob">↔</span><span class="tag l">Vorher</span><span class="tag r">Nachher</span></div>
+</section>
+
+<section class="blk" id="wand"><div class="wrap">
+ <span class="kick">Spiegelwand</span><h2 class="disp">Wen willst du?</h2><p class="lead">Vier Barber, vier Spiegel. Tipp auf einen: Er ist im Termin vorgewählt.</p>
+ <div class="mirror wall rv"><picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/spiegelwand-m.webp"><img src="assets/img/spiegelwand.webp" alt="Vier Barber in vier beleuchteten Spiegeln" loading=lazy decoding="async"></picture></div>
+ <div class="barbers"><button class="bcard" data-b="milan"><img src=assets/img/team-milan.webp alt=Milan loading=lazy><span><b>Milan</b><small>Fade & Line-up</small></span></button><button class="bcard" data-b="yusuf"><img src=assets/img/team-yusuf.webp alt=Yusuf loading=lazy><span><b>Yusuf</b><small>Kontur & Bart</small></span></button><button class="bcard" data-b="noah"><img src=assets/img/team-noah.webp alt=Noah loading=lazy><span><b>Noah</b><small>Locken</small></span></button><button class="bcard" data-b="ben"><img src=assets/img/team-ben.webp alt=Ben loading=lazy><span><b>Ben</b><small>Meister · Akademie</small></span></button></div>
+</div></section>
+
+<section class="filmsec" aria-label="Vorher, Arbeit, Ergebnis im Spiegel">
+ <div class="stage" data-n="150" data-seq="assets/seq/d/f_###.webp?v=28i" data-seqm="assets/seq/m/f_###.webp?v=28i"><div class="mirror"><div class="still"><picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/vorher-m.webp"><img src="assets/img/vorher.webp" alt="Vorher" loading=eager decoding="async"></picture><picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/clipper-m.webp"><img src="assets/img/clipper.webp" alt="Arbeit" loading=eager decoding="async"></picture><picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/nachher-m.webp"><img src="assets/img/nachher.webp" alt="Nachher" loading=eager decoding="async"></picture></div><canvas aria-hidden="true"></canvas>
+  <div class="filmtxt"><span class="kick">Im Spiegel</span><h2 class="disp">45 Minuten.<br>Ein Zug.</h2></div>
+  <div class="steps3"><span class="on">Beratung</span><span>Fade blenden</span><span>Line-up &amp; Finish</span></div></div></div>
+</section>
+
+<section class="blk cfg" id="hoehe"><div class="wrap split">
+ <div class="mirror rv"><img src="assets/img/fade-low.webp" alt="Low Fade" loading="lazy" class=""><img src="assets/img/nachher.webp" alt="Mid Fade" loading="lazy" class="on"><img src="assets/img/fade-high.webp" alt="High Fade" loading="lazy" class=""><img src="assets/img/buzz-bart.webp" alt="Buzz + Bart" loading="lazy" class=""></div>
+ <div><span class="kick">Fade-Höhe</span><h2 class="disp">Low, Mid oder High?</h2><p class="lead">Derselbe Kopf, vier Schnitte. Tipp durch und such dir deine Höhe aus, bevor du dich setzt.</p>
+ <div class="chips"><button class="chip" data-name="Low Fade" data-txt="Startet knapp über dem Ohr. Dezent, wächst unauffällig raus.">Low Fade</button><button class="chip on" data-name="Mid Fade" data-txt="Auf Schläfenhöhe. Der Klassiker, sichtbar, aber nicht laut.">Mid Fade</button><button class="chip" data-name="High Fade" data-txt="Bis zur Kopfrundung. Starker Kontrast, braucht oft Pflege.">High Fade</button><button class="chip" data-name="Buzz + Bart" data-txt="Eine Länge rundum, dazu ein scharf konturierter Bart.">Buzz + Bart</button></div><div class="cfgname">Mid Fade</div><p class="cfgtxt lead" style="margin-top:6px">Auf Schläfenhöhe. Der Klassiker, sichtbar, aber nicht laut.</p>
+ <a class="link" href="fade.html" data-sub>Alles über den Fade</a></div>
+</div></section>
+
+<section class="blk" id="bart"><div class="wrap split">
+ <div><span class="kick">Bart</span><h2 class="disp">Auch hier: wisch drüber.</h2><p class="lead">Länge, Wangenlinie, Hals. Der Bart bekommt dieselbe Kante wie der Fade.</p><a class="link" href="bart.html" data-sub>Bart &amp; Kontur</a></div>
+ <div class="mirror swipe" tabindex="0" role="slider" aria-label="Vorher / Nachher, zum Vergleichen ziehen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+ <picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/bart-vorher-m.webp"><img src="assets/img/bart-vorher.webp" alt="Bart vorher, ungleichmäßig" loading=lazy decoding="async"></picture><picture class="after"><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/bart-nachher-m.webp"><img src="assets/img/bart-nachher.webp" alt="Bart nachher, scharf konturiert" loading=lazy decoding="async"></picture><span class="bar"></span><span class="knob">↔</span><span class="tag l">Vorher</span><span class="tag r">Nachher</span></div>
+</div></section>
+
+<section class="blk" id="termin"><div class="wrap split" style="align-items:start">
+ <div><span class="kick">Termin · 24/7</span><h2 class="disp">Dein Stuhl.<br>Deine Zeit.</h2><p class="lead" style="margin-bottom:22px">Kein Anruf, während die Maschine läuft. Barber und Zeit wählen, fertig.</p>
+  <div class="gapcard"><span class="dot"></span><p><b>Lücke frei: heute 16:30</b>Jemand hat abgesagt. Auf der Warteliste bekommst du so etwas per SMS.</p><button class="btn">Nehmen</button></div>
+  <p class="demo-note" style="margin-top:10px">Beispiel – im echten Betrieb live aus dem Kalender.</p></div>
+ <div class="card" id="booking">
+  <div class="again"><img src=assets/img/team-milan.webp alt=Milan><p><b>Wie immer?</b><br>Skin Fade bei Milan, nächster freier Termin.</p><button class="btn">Ein Tipp</button></div>
+  <h3>1 · Leistung</h3><div class="opts"><button class="opt" data-svc="Haarschnitt">Haarschnitt</button><button class="opt" data-svc="Skin Fade">Skin Fade</button><button class="opt" data-svc="Haare & Bart">Haare &amp; Bart</button><button class="opt" data-svc="Bart in Form">Bart in Form</button><button class="opt" data-svc="Line-up">Line-up</button></div>
+  <h3>2 · Barber</h3><div class="opts"><button class="opt bb" data-b="milan" data-name="Milan">Milan</button><button class="opt bb" data-b="yusuf" data-name="Yusuf">Yusuf</button><button class="opt bb" data-b="noah" data-name="Noah">Noah</button><button class="opt bb" data-b="ben" data-name="Ben">Ben</button></div>
+  <h3>3 · Tag &amp; Zeit</h3><div class="days"></div><div class="slots"></div>
+  <div class="sum"><p></p><button class="btn" disabled>Stuhl buchen</button></div>
+  <p class="demo-note" style="margin-top:10px">Demo: Zeiten sind Beispiele, es wird nichts gebucht.</p>
+ </div>
+</div></section>
+
+<section class="blk" id="liste" style="padding-top:20px"><div class="wrap">
+ <span class="kick">Liste</span><h2 class="disp">Was wir machen.</h2><p class="lead">Mit Dauer. Den Preis siehst du beim Buchen, bevor du bestätigst.</p>
+ <div class="plist"><div class="pcard rv"><h3>Haare</h3><table><tr><td><a href="fade.html" data-sub>Haarschnitt</a></td><td>45 Min.</td></tr><tr><td><a href="fade.html" data-sub>Skin Fade</a></td><td>45 Min.</td></tr><tr><td><a href="fade.html" data-sub>Buzz Cut</a></td><td>20 Min.</td></tr><tr><td><a href="fade.html" data-sub>Jungs bis 14</a></td><td>30 Min.</td></tr></table></div><div class="pcard rv"><h3>Bart</h3><table><tr><td><a href="bart.html" data-sub>Bart in Form</a></td><td>30 Min.</td></tr><tr><td><a href="bart.html" data-sub>Haare &amp; Bart</a></td><td>60 Min.</td></tr><tr><td><a href="bart.html" data-sub>Bart färben</a></td><td>20 Min.</td></tr></table></div><div class="pcard rv"><h3>Kontur</h3><table><tr><td><a href="kontur.html" data-sub>Line-up</a></td><td>15 Min.</td></tr><tr><td><a href="kontur.html" data-sub>Nacken frei</a></td><td>10 Min.</td></tr><tr><td><a href="kontur.html" data-sub>Augenbrauen</a></td><td>10 Min.</td></tr></table></div></div>
+</div></section>
+
+<section class="blk" id="karriere"><div class="wrap split">
+ <div class="mirror rv" style="aspect-ratio:16/10"><picture class=""><source media="(max-width: 900px) and (min-height: 501px)" srcset="assets/img/feierabend-m.webp"><img src="assets/img/feierabend.webp" alt="Leerer Stuhl vor dem Spiegel zum Feierabend, im Spiegel das lachende Team" loading=lazy decoding="async"></picture></div>
+ <div><span class="kick">Dein Platz am Spiegel</span><div class="kin"><span>Ausbildung.</span><span>Feste Kundschaft.</span><span>Weiterbildung.</span></div>
+ <p class="lead" style="margin-top:16px">Wir suchen Azubis und Barber. Eigener Stuhl, Stammkunden ab Tag eins, Akademie-Abend jeden Mittwoch.</p><a class="link" href="akademie.html" data-sub>Alles zur Akademie</a>
+ <div class="apply"><span class="timer">60 s</span><h3>Bewerben in 60 Sekunden</h3><div class="prog60"><i></i></div>
+  <div class="step on"><button class="btn" data-next>Los</button></div>
+  <div class="step"><label>Was suchst du?</label><div class="opts"><button class="opt" data-next>Ausbildung</button><button class="opt" data-next>Job als Barber</button><button class="opt" data-next>Abendkurs</button></div></div>
+  <div class="step"><form><label for="ap-n">Vorname</label><input id="ap-n" autocomplete="given-name" required><label for="ap-t">Handynummer</label><input id="ap-t" type="tel" autocomplete="tel" required><p style="margin-top:14px"><button class="btn" type="submit">Abschicken</button></p></form></div>
+  <div class="step"><h3>Danke.</h3><p style="margin-top:8px;color:var(--mute)">Demo: Es wurde nichts gesendet. Im echten Betrieb meldet sich Ben innerhalb von 48 Stunden.</p></div></div></div>
+</div>
+<div class="wrap"><div class="nums">
+  <div><b data-count="80118">0</b><p>Friseursalons in Deutschland Ende 2025 – 245 weniger als im Jahr davor.</p></div>
+  <div><b data-count="7497">0</b><p>neue Ausbildungsverträge Friseur/-in 2025, bundesweit.</p></div>
+  <div><b data-count="40.6" data-dec="1" data-pre="−" data-suf=" %">0</b><p>Friseur-Azubis in NRW seit 2014. Wer jetzt lernt, wird gebraucht.</p></div></div>
+ <p class="src">Quellen: Zentralverband des Deutschen Friseurhandwerks, PM 06/2026 (Salons; Ausbildungsverträge nach BIBB); Bezirksregierung Arnsberg. Stand 11/2026.</p></div>
+</section>
+
+<section class="blk" id="bewertungen"><div class="wrap"><span class="kick">Stimmen</span><h2 class="disp">Was Kunden sagen könnten.</h2>
+ <div class="revs"><div class="rev"><p>„Seit einem Jahr derselbe Barber, derselbe Schnitt. Ein Tipp und gebucht.“</p><small>Beispiel · noch keine echte Bewertung</small></div>
+ <div class="rev"><p>„Vorher im Spiegel gezeigt, wie hoch der Fade geht. Genau so ist er geworden.“</p><small>Beispiel · noch keine echte Bewertung</small></div>
+ <div class="rev"><p>„Lücke um 16:30 per SMS bekommen, um 17:15 saß der Fade.“</p><small>Beispiel · noch keine echte Bewertung</small></div></div>
+ <p class="demo-note" style="margin-top:20px">Dieser Musterbetrieb hat noch keine echten Bewertungen. Im echten Betrieb stehen hier Google-Note, Anzahl und Stand.</p>
+</div></section>
+</main><footer class="ft" id="kontakt"><div class="wrap"><span class="kick">Besuch</span><h2 class="disp">Setz dich.<br>Wir machen den Rest.</h2>
+<div class="grid"><div><p style="max-width:40ch;color:var(--mute)">Kölner Straße 88 · 40211 Düsseldorf (Demo-Adresse)<br>Telefon 0211 000 000 1 (Demo)</p><p style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#termin">Stuhl buchen</a><a class="btn ghost" href="besuch.html">Anfahrt</a></p></div>
+<div><span class="kick">Öffnungszeiten</span><div style="margin-top:10px"><div class="row"><span>Mo</span><span>zu</span></div><div class="row"><span>Di – Fr</span><span>10 – 20 Uhr</span></div><div class="row"><span>Sa</span><span>9 – 17 Uhr</span></div><div class="row"><span>Walk-in</span><span>Di – Fr 10 – 13 Uhr</span></div></div></div>
+<div><span class="kick">Mehr</span><ul style="margin-top:6px"><li><a href="fade.html">Fade</a></li><li><a href="bart.html">Bart</a></li><li><a href="kontur.html">Kontur</a></li><li><a href="team.html">Barber</a></li><li><a href="akademie.html">Akademie</a></li></ul></div></div>
+<div class="fine"><span>KANTE ist eine Demo-Webseite eines Musterbetriebs. Formulare senden nichts, Termine sind Beispiele.</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div></div></footer>
+<div class="dlg" id="dlg-ok" role="dialog" aria-modal="true" aria-labelledby="dlg-t"><div class="box"><h3 id="dlg-t">Stuhl reserviert</h3><p></p><button class="btn" data-close>Alles klar</button></div></div>
+<script src="assets/js/app.js?v=28i" defer></script></body></html>
